@@ -6,6 +6,11 @@ class Vowel{
 		StringBuilder res = new StringBuilder();
 		//define a string array that holds a list of characters after the string is split with empty spaces
 		String[] words = s.split(" +");
+		//lets now iterate through our split string using a for loop
+		for (String word : words){
+			//we skip the first char
+			res.append(word.charAt(0));
+		}
 
 	}
 }

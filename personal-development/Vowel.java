@@ -12,9 +12,16 @@ class Vowel{
 			res.append(word.charAt(0));
 			//if character is a vowel, replace it with the corresponding number at the current index
 			for (int i = 1; i < word.length(); i++){
+				//assign the character at the current index to character variable named ch
 				char ch = word.charAt(i);
+				//if the current character being iterated thru is a vowel, append the index to res
+				if (isVowel(ch)){
+					res.append(i);
+				}
 			}
+			res.append(' ');
 		}
-
+		//do some printing
+		System.out.println(res);
 	}
 }

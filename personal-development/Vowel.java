@@ -10,6 +10,10 @@ class Vowel{
 		for (String word : words){
 			//we skip the first char
 			res.append(word.charAt(0));
+			//if character is a vowel, replace it with the corresponding number at the current index
+			for (int i = 1; i < word.length(); i++){
+				char ch = word.charAt(i);
+			}
 		}
 
 	}

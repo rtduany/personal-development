@@ -24,4 +24,10 @@ class Vowel{
 		//do some printing
 		System.out.println(res);
 	}
+	//define a static boolean isVowel method to validate whether a char is a vowel
+	static boolean isVowel(char ch){
+		//first, lets make it case-insensitive
+		ch=character.toLowerCase(ch);
+		return ch=='a' ||ch=='e' ||ch=='i' ||ch=='o' ||ch=='u';
+	}
 }

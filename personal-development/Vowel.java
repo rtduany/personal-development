@@ -30,4 +30,10 @@ class Vowel{
 		ch=character.toLowerCase(ch);
 		return ch=='a' ||ch=='e' ||ch=='i' ||ch=='o' ||ch=='u';
 	}
+
+	//lets now define a main method to test our program
+	public static void main(String[] args){
+		String replaceVowels = vowelToIndex("Hello, how are you?");
+		System.out.println(replaceVowels);
+	}
 }

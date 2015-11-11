@@ -19,3 +19,13 @@
 // vowelMap.get('e'); // 3
 // vowelMap.get('u'); // 3
 
+//define a VowelCount.java
+class VowelCount{
+	//define a vowelCount method for VowelCount class
+	public void vowelCount{
+
+	}
+	public static void main(String[] args){
+
+	}
+}

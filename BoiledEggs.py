@@ -12,3 +12,7 @@
 #cooking_time 5 # must return 5
 #cooking_time 10 # must return 10
 
+def BoiledEgg(number_of_eggs):
+	isPositiveNum=lambda x: (isinstance(x, int) and x>0) or False
+	while not isPositiveNum(number_of_eggs):
+		print "Negative number!"

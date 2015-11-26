@@ -11,16 +11,17 @@
 #cooking_time 0 # must return 0
 #cooking_time 5 # must return 5
 #cooking_time 10 # must return 10
-
-def BoiledEgg(number_of_eggs):
-	isPositiveNum=lambda x: (isinstance(x, int) and x>0) or False
-	b = 8;
-	while isPositiveNum(number_of_eggs):
-		if number_of_eggs <= b:
-			time = number_of_eggs * 5
+#define function that takes in 1 parameters eggs (non-negative)
+def cooking_time(eggs):
+	#tests for negativity
+	if eggs >= 0:
+		#in the case not needing a mod calculation
+		if eggs <= 8:
+			time = eggs * 5
+		#in the case needing a mod calculation
 		else:
-			y = divmod(number_of_eggs, b)
-			time = (y[0]*5) + (y[1])
-	return time
-print BoiledEgg(15)
-
+			#mod calculation implemented via divmod module
+			y = divmod(eggs, 8)
+			time = (y[0]*5) + 5
+		return time
+print cooking_time(25)

@@ -14,5 +14,13 @@
 
 def BoiledEgg(number_of_eggs):
 	isPositiveNum=lambda x: (isinstance(x, int) and x>0) or False
-	while not isPositiveNum(number_of_eggs):
-		print "Negative number!"
+	b = 8;
+	while isPositiveNum(number_of_eggs):
+		if number_of_eggs <= b:
+			time = number_of_eggs * 5
+		else:
+			y = divmod(number_of_eggs, b)
+			time = (y[0]*5) + (y[1])
+	return time
+print BoiledEgg(15)
+

@@ -2,7 +2,7 @@ import java.util.*;
 //declare the ArrayListExamples.java class
 public class ArrayListExamples{
 	//define the main method for our ArrayListExamples.java class
-	public static void main(Sring[] args){
+	public static void main(String[] args){
 		//create an empty String array list
 		ArrayList<String> list = new ArrayList<String>();
 
@@ -14,13 +14,13 @@ public class ArrayListExamples{
 		list.add(3, "item4");
 
 		//lets now display the contents of the array list
-		System.out.println("The array list contains the following elements: "+list);
+		System.out.println("The array list contains the following elements: " + list);
 		//lets check the index of an item
 		int pos = list.indexOf("item2");
-		System.out.println("The index of item2 is: "+pos);
+		System.out.println("The index of item2 is: " + pos);
 		//lets now check if the array list is empty
 		boolean check = list.isEmpty();
-		System.out.println("Checking if the array list is empty: "+check);
+		System.out.println("Checking if the array list is empty: " + check);
 		//get the size of the list
 		int size = list.size();
 		System.out.println("The size of the array list is: " + size);
@@ -33,19 +33,19 @@ public class ArrayListExamples{
 		//retrieve elements from array list
 		//first way: loop using index and size of list
 		System.out.println("Retrieve elements by looping through using index and size list: ");
-		for (int i = 0; i < list.length; i++){
+		for (int i = 0; i < list.size(); i++){
 			System.out.println("index: " + i + "- item: " + list.get(i));
 		}
 		//2nd way: looping using foreach loop
 		System.out.println("Retrieving items using foreach loop");
 		for (String str: list){
-			System.out.println("Item is: " +str);
+			System.out.println("Item is: " + str);
 		}
 		//3rd way: using iterator
 		//hasNext: returns true if there still more elements
 		//next: returns the next element
 		System.out.println("Retrieving items using iterator");
-		for (Iterator<String> it = list.Iterator(); it.hasNext()){
+		for (Iterator<String> it = list.iterator(); it.hasNext();){
 			System.out.println("Item is: " + it.next());
 		}
 		//replacing an element
@@ -55,8 +55,11 @@ public class ArrayListExamples{
 		//remove item at position 0
 		list.remove(0);
 		//remove the first occurrence of item3
-		list.remove(item3);
-
+		list.remove("item3");
+		System.out.println("The final contents of the array list are: " + list);
+		//converting ArrayList to Array
+		String[] simpleArray = list.toArray(new String[list.size()]);
+		System.out.println("The array created after the conversion of our array list is: " + Arrays.toString(simpleArray));
 
 	}
 }

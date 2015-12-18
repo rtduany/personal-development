@@ -48,7 +48,14 @@ public class ArrayListExamples{
 		for (Iterator<String> it = list.Iterator(); it.hasNext()){
 			System.out.println("Item is: " + it.next());
 		}
-
+		//replacing an element
+		list.set(1, "newItem");
+		System.out.println("The aray list after replacement is: " + list);
+		//removing items
+		//remove item at position 0
+		list.remove(0);
+		//remove the first occurrence of item3
+		list.remove(item3);
 
 
 	}

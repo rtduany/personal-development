@@ -24,6 +24,18 @@ public class ArrayListExamples{
 		//get the size of the list
 		int size = list.size();
 		System.out.println("The size of the array list is: " + size);
+		//check if an element is included in the list
+		boolean element = list.contains("item5");
+		System.out.println("Checking if the array list contains item5: " + element);
+		//get element at a specified position
+		String item = list.get(0);
+		System.out.println("The element at position or index one is: " + item);
+		//retrieve elements from array list
+		//first way: loop using index and size of list
+		System.out.println("Retrieve elements by looping through using index and size list: ");
+		for (int i = 0; i < list.length; i++){
+			System.out.println("index: " + i + "- item: " + list.get(i));
+		}
 
 	}
 }

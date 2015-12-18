@@ -36,6 +36,20 @@ public class ArrayListExamples{
 		for (int i = 0; i < list.length; i++){
 			System.out.println("index: " + i + "- item: " + list.get(i));
 		}
+		//2nd way: looping using foreach loop
+		System.out.println("Retrieving items using foreach loop");
+		for (String str: list){
+			System.out.println("Item is: " +str);
+		}
+		//3rd way: using iterator
+		//hasNext: returns true if there still more elements
+		//next: returns the next element
+		System.out.println("Retrieving items using iterator");
+		for (Iterator<String> it = list.Iterator(); it.hasNext()){
+			System.out.println("Item is: " + it.next());
+		}
+
+
 
 	}
 }

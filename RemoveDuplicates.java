@@ -23,5 +23,9 @@ public class RemoveDuplicates{
 		}
 		return Arrays.toString(emptylist);
 	}
-
+	//define a main method for the removeDuplicates class
+	public static void main(String[] args){
+		int[] a = {1, 3, 5, 3, 1, 9, 4};
+		System.out.println(a);
+	}
 }

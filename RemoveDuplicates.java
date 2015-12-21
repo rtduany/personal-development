@@ -8,13 +8,20 @@ public class RemoveDuplicates{
 		//create an array list object
 		ArrayList<Integer> alreadyPresent = new ArrayList<Integer>();
 		//iterate through elements using a for loop
-		for (int i; i < arr.length; i++) {
+		for (int i = 0; i < arr.length; i++) {
 			//if our array list does not contain the incoming element. This prevents the addition of a duplicate
 			if (!alreadyPresent.contains(arr[i])){
 				//if the element is not a duplicate, add it to our alreadyPresent ArrayList
 				alreadyPresent.add(arr[i]);
 			}
 		}
+		//create an empty int array that is the same size as modified array list
+		int[] emptylist = new int[alreadyPresent.size()];
+		//lets now fill our empty integer array using a for loop
+		for (int i = 0; i < alreadyPresent.size(); i++){
+			emptylist[i] = alreadyPresent.get(i);
+		}
+		return Arrays.toString(emptylist);
 	}
 
 }

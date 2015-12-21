@@ -25,7 +25,9 @@ public class RemoveDuplicates{
 	}
 	//define a main method for the removeDuplicates class
 	public static void main(String[] args){
+		//create a integer array
 		int[] a = {1, 3, 5, 3, 1, 9, 4};
-		System.out.println(a);
+		//lets now print the modified integer array
+		System.out.println(removeDuplicates(a));
 	}
 }

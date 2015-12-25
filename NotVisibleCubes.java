@@ -5,5 +5,8 @@ public class NotVisibleCubes {
 		Long inner = (n-2)*(n-2)*(n-2);
 	return inner;
 	}
-
+	public static void main(String[] args){
+		NotVisibleCubes nvc = new NotVisibleCubes();
+		System.out.println("The invisible sides of the cube are: " + nvc.notVisibleCubes(6L));
+	}
 }

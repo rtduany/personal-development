@@ -3,5 +3,11 @@
 Don't round the numbers! Just cut them after two decimal places!
 */
 public class Numbers{
-
+	public static double twoDecimalPlaces(double number){
+		if (number < 0){
+			return Math.ceil(number * 100) / 100;
+		}else{
+			return Math.floor(number * 100) / 100;
+		}
+	}
 }

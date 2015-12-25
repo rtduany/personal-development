@@ -19,5 +19,8 @@ public class ReverseFun {
 		}
 		return sb.toString();
 	}
-
+	public static void main(String[] args){
+		String string1 = "012345";
+		System.out.println(reverse(string1));
+	}
 }

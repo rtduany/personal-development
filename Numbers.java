@@ -10,4 +10,8 @@ public class Numbers{
 			return Math.floor(number * 100) / 100;
 		}
 	}
+	public static void main(String[] args){
+		double num = 10.123456;
+		System.out.println(twoDecimalPlaces(num));
+	}
 }

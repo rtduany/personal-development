@@ -8,5 +8,10 @@ public class Chocolate{
 		if (n != 0 && m != 0){
 			minBreaks = (n * m) - 1;
 		}
+		return minBreaks;
+	}
+	//define a main method to test our Chocolate class
+	public static void main(String[] args){
+		System.out.println("The minimum of breaks are: " + breakChocolate(5, 5));
 	}
 }

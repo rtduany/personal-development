@@ -9,21 +9,17 @@ mxdiflg(s1, s2) --> 13
 */
 class MaxLength {
 	public static int maxLength(String[] a1, String[] a2) {
-        int maxDiff = 0;
-		if (a1.length == 0 || a2.length == 0){
-			maxDiff = -1;
-		}else{
-			for (String s1 : a1){
-				for (String s2 : a2){
-					int max = Math.abs(s1.length() - s2.length());
-					if (max > maxDiff){
-						maxDiff = max;
-					}
+        int maxDiff = -1;
+		for (String x : a1){
+			for (String y : a2){
+				int max = Math.abs(x.length() - y.length());
+				if (max > maxDiff){
+					maxDiff = max;
 				}
 			}
 		}
 		return maxDiff;
-    }
+	}
 	public static void main(String[] args){
 		String[] s1 = {"hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"};
 		String[] s2 = {"cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"};

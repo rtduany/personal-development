@@ -24,5 +24,9 @@ class MaxLength {
 		}
 		return maxDiff;
     }
-
+	public static void main(String[] args){
+		String[] s1 = {"hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"};
+		String[] s2 = {"cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"};
+		System.out.println("The maximum difference is: " + maxLength(s1, s2));
+	}
 }

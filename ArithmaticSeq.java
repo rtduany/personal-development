@@ -13,5 +13,7 @@ c is the constant added between the terms.
 Remember that first is in the index 0 .. just saying ...
 */
 public class ArithmaticSeq{
-
+	public static int nthterm(int first, int n, int c){
+		return c+(n-1)*first;
+	}
 }

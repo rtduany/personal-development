@@ -9,9 +9,22 @@ A string (no spaces) containing [a-z],[A-Z],[0-9] and common symbols. The length
 Output
 true if the word is a valid word, or false if the word is not valid.
 */
+import java.util.*;
 public class CharacterCount {
+  public static void validateWord(String word) {
+    HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+	for (int i = 0; i < word.length(); i++){
+		char c = word.charAt(i);
+		Integer val = map.get(new Character(c));
+		if (val != null){
+			map.put(c, new Integer(val + 1));
+		}else{
+			map.put(c, 1);
+		}
+	}
 
-  public static boolean validateWord(String word) {
-    // your code here
+
+
   }
+
 }

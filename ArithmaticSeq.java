@@ -14,6 +14,9 @@ Remember that first is in the index 0 .. just saying ...
 */
 public class ArithmaticSeq{
 	public static int nthterm(int first, int n, int c){
-		return c+(n-1)*first;
+		return first + (n - 1) * c;
+	}
+	public static void main(String[] args){
+		System.out.println(nthterm(0, 100, 5));
 	}
 }

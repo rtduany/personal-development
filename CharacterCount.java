@@ -22,9 +22,15 @@ public class CharacterCount {
 			map.put(c, 1);
 		}
 	}
-
-
-
+	  Iterator it = map.entrySet().iterator();
+	  System.out.println("char : frequency");
+	  while (it.hasNext()){
+		  Map.Entry pairs = (Map.Entry) it.next();
+		  System.out.println(pairs.getKey()+ ":" +pairs.getValue());
+		  it.remove();
+	  }
   }
-
+	public static void main(String[] args){
+		validateWord("abcabccba");
+	}
 }

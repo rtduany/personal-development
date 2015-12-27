@@ -9,14 +9,16 @@ public class Collatz{
 		long temp = x;
 		//ensure that returned default value is 1
 		long length = 1;
-		while (temp > 1) {
+		//while (temp > 1) {
+		while (temp != 1) {
 			if (temp % 2 == 0){
-				length++;
+				//length++;
 				temp = temp / 2;
 			}else{
-				length++;
+				//length++;
 				temp = 3 * temp + 1;
 			}
+			length++;
 		}
 		return length;
 	}

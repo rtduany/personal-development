@@ -20,5 +20,8 @@ public class Collatz{
 		}
 		return length;
 	}
-
+	public static void main(String[] args){
+		long n = 20;
+		System.out.println(conjecture(n));
+	}
 }

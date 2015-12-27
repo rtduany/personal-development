@@ -5,5 +5,20 @@ Write a program that will output the length of the Collatz Conjecture for any gi
 */
 import java.util.ArrayList;
 public class Collatz{
+	public static long conjecture(long x) {
+		long temp = x;
+		//ensure that returned default value is 1
+		long length = 1;
+		while (temp > 1) {
+			if (temp % 2 == 0){
+				length++;
+				temp = temp / 2;
+			}else{
+				length++;
+				temp = 3 * temp + 1;
+			}
+		}
+		return length;
+	}
 
 }

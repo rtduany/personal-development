@@ -47,6 +47,8 @@ public class DescendingOrder {
 		}
 		return Arrays.toString(arr);
 	}
-
-
+	public static void main(String[] args){
+		int input = 145263;
+		System.out.println(reverse(input));
+	}
 }

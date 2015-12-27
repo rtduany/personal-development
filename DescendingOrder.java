@@ -6,5 +6,29 @@ Input: 1254859723 Output: 9875543221 */
 import java.util.Arrays;
 import java.util.*;
 public class DescendingOrder {
+	public static int reverse(int number){
+		//turn int to int[]
+		String num = String.valueOf(number);
+		int[] arr = new int[num.length()];
+		int i = 0;
+		do {
+			arr[i] = number % 10;
+			number /= 10;
+			i++;
+		} while (number != 0);
+
+		//sort ascending
+		Arrays.sort(arr);
+		//reverse it
+		revArray(arr);
+
+		//convert int[] back to int
+		StringBuilder strNum = new StringBuilder();
+		for (int numb : arr) {
+			strNum.append(numb);
+		}
+		int myInt = Integer.valueOf(strNum.toString());
+		return myInt;
+	}
 
 }

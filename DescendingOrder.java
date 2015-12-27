@@ -30,5 +30,23 @@ public class DescendingOrder {
 		int myInt = Integer.valueOf(strNum.toString());
 		return myInt;
 	}
+	//a method to reverse the array
+	public static String revArray(int[] arr) {
+		int left = 0;
+		int right = arr.length - 1;
+
+		while( left < right ) {
+			// swap the values at the left and right indices
+			int temp = arr[left];
+			arr[left] = arr[right];
+			arr[right] = temp;
+
+			// move the left and right index pointers in toward the center
+			left++;
+			right--;
+		}
+		return Arrays.toString(arr);
+	}
+
 
 }

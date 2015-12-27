@@ -3,6 +3,7 @@ For example, if n = 20, the resulting sequence will be:
 [20, 10, 5, 16, 8, 4, 2, 1]
 Write a program that will output the length of the Collatz Conjecture for any given n. In the example above, the output would be 8.
 */
+import java.util.ArrayList;
 public class Collatz{
 
 }

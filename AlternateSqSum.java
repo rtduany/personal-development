@@ -17,5 +17,8 @@ public class AlternateSqSum{
 		total = oddSum + evenSum;
 		return total;
 	}
-
+	public static void main(String[] args){
+		int[] arr = new int[] {10, 7, 15, 11, 12, 15, 6, 12, 15, 13, 9};
+		System.out.println("The total is: " + alternateSqSum(arr));
+	}
 }

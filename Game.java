@@ -64,6 +64,17 @@ public class Game {
 		}
 		return winner;
 	}
+	// hm is the map you are trying to get value from it
+	public static Object getKey(Map hm, Object value) {
+		Object ob = null;
+		for (Object o : hm.keySet()) {
+			if (hm.get(o).equals(value)) {
+				return o;
+			}
+			ob = o;
+		}
+		return ob;
+	}
 
 
 }

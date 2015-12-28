@@ -75,6 +75,10 @@ public class Game {
 		}
 		return ob;
 	}
-
-
+	public static void main(String[] args){
+		String[] deckSteve = new String[]{"A", "7", "8"};
+		String[] deckJosh = new String[]{"K", "5", "9"};
+		Game game = new Game();
+		System.out.println(game.winner(deckSteve, deckJosh));
+	}
 }

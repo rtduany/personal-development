@@ -75,6 +75,15 @@ public class Game {
 		}
 		return ob;
 	}
+	private static int getInt(Object obj) {
+		if (obj instanceof String) {
+			return Integer.parseInt((String) obj);
+		} else if(obj instanceof Integer){
+			return (Integer) obj;
+		} else{
+			return 0; // or else whatever you want
+		}
+	}
 	public static void main(String[] args){
 		String[] deckSteve = new String[]{"A", "7", "8"};
 		String[] deckJosh = new String[]{"K", "5", "9"};

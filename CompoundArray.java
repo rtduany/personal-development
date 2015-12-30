@@ -8,5 +8,37 @@ import java.util.Arrays;
 import java.util.ArrayList;
 public class CompoundArray{
 	public static int[] compoundArray(int[] a, int[] b){
+		//Who Dares wins!
+		//declare cArray array list
+		ArrayList<Integer> cArray = new ArrayList<Integer>();
+		int j = 0;
+		int k = 0;
+		int len = a.length + b.length;
+		for (int i = 0; i < len; i++){
+			//two incoming arrays are the same length
+			if (j < a.length && k < b.length){
+				cArray.add(a[j++]);
+				cArray.add(b[k++]);
+				i++;
+			//if array a ends first
+			}else if (j >= a.length && k < b.length){
+				cArray.add(b[k++]);
+			//if array b ends first
+			}else if (j < a.length && k >= b.length){
+				cArray.add(a[j++]);
+			}else{
+				System.out.println("There is an error!");
+			}
+		}
+		//create an empty int[] with same size as cArray (array list)
+		int[] lastArray = new int[cArray.size()];
+		//populate cArray array list using a for loop
+		for (int i = 0; i < cArray.size(); i++){
+			lastArray[i] = cArray.get(i);
+		}
+
+		return lastArray;
+	}
+
 
 }

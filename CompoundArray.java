@@ -39,6 +39,10 @@ public class CompoundArray{
 
 		return lastArray;
 	}
-
-
+	public static void main(String[] args){
+		int[] a = new int[]{0,1,2};
+		int[] b = new int[]{9,8,7,6,5,4,3,2,1,0};
+		int[] returned = compoundArray(a, b);
+		System.out.println("The new shuffled array is: " + Arrays.toString(returned));
+	}
 }

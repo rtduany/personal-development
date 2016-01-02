@@ -18,5 +18,8 @@ public class Rectangle {
 		}
 		return res;
 	}
+	public static void main(String[] args){
+		System.out.println("The returned list is: " + Rectangle(5, 3));
+	}
 
 }

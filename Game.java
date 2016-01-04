@@ -59,7 +59,16 @@ public class Game {
 				if (getKey(myPair, deckSteve[i]) > getKey(myPair, deckJosh[i])){ pointsSteve++; }
 				if (getKey(myPair, deckSteve[i]) < getKey(myPair, deckJosh[i])) { pointsJosh++; }
 			}
-
+			//If SteveDedk contains a letter but JoshDeck contains a number
+			if ((c1.matches("^[A-Z]+$")) && (c2.matches("^[0-9]+$"))){
+				if (getKey(myPair, deckSteve[i]) > getInt(deckJosh[i])){ pointsSteve++; }
+				if (getKey(myPair, deckSteve[i]) < getInt(deckJosh[i])){ pointsJosh++; }
+			}
+			//If SteveDedk contains a number but JoshDeck contains a letter
+			if ((c1.matches("^[0-9]+$")) && (c2.matches("^[A-Z]+$"))){
+				if (getInt(deckSteve[i]) > getKey(myPair, deckJosh[i])){ pointsSteve++; }
+				if (getInt(deckSteve[i]) < getKey(myPair, deckJosh[i])){ pointsJosh++; }
+			}
 
 		}
 		//default winner is "Tie"

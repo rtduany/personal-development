@@ -1,81 +1,12 @@
 /* deckSteve and deckJosh are arrays representing their decks. They are filled with "cards", represented by a single character. The card rank is as follows (from lowest to highest):
-
 '2','3','4','5','6','7','8','9','T','J','Q','K','A'
 Every card may appear in the deck more than once. Figure out who is going to win and return who wins and with what score:	*/
 import java.util.HashMap;
 import java.util.Map;
-import java.util.*;
 
 public class Game {
-	public String winner(String[] deckSteve, String[] deckJosh) {
-		// make a dictionary using a HashMap
-		HashMap<String, String> myPair = new HashMap<String, String>();
-		//Adding elements to HashMap
-		myPair.put("2", "Two");
-		myPair.put("3", "Three");
-		myPair.put("4", "Four");
-		myPair.put("5", "Five");
-		myPair.put("6", "Six");
-		myPair.put("7", "Seven");
-		myPair.put("8", "Eight");
-		myPair.put("9", "Nine");
-		myPair.put("10", "T");
-		myPair.put("11", "J");
-		myPair.put("12", "Q");
-		myPair.put("13", "K");
-		myPair.put("14", "A");
 
-		//iterate through both decks
-		int pointsSteve = 0;
-		int pointsJosh = 0;
-		//convert the incoming string to int
-		int sKey = Integer.parseInt((String) getKey(myPair, deckSteve[0]));
-		int jKey = Integer.parseInt((String) getKey(myPair, deckJosh[0]));
-
-		if (sKey > jKey){
-			pointsSteve++;
-		}
-		else if (sKey < jKey) {
-			pointsJosh++;
-		}
-		else{
-			System.out.println("Else block!");
-		}
-
-		for (int i = 1; i < deckSteve.length; i++){
-			int intSteve = Integer.parseInt(deckSteve[i]);
-			int intJosh = Integer.parseInt(deckJosh[i]);
-			if (intSteve > intJosh){
-				pointsSteve++;
-			}else if (intSteve < intJosh){
-				pointsJosh++;
-			}else{
-			System.out.println("Second Else block!");
-			}
-		}
-		//default winner is "Tie"
-		String winner = "";
-		if (pointsSteve > pointsJosh){
-			winner = "Steve wins "+pointsSteve+" to "+pointsJosh;
-		}else if (pointsJosh < pointsSteve){
-			winner = "Josh wins "+pointsJosh+" to "+pointsSteve;
-		}else {
-			winner = "Tie";
-		}
-		return winner;
-	}
-	// hm is the map you are trying to get value from it
-	public static Object getKey(Map hm, Object value) {
-		Object ob = null;
-		for (Object o : hm.keySet()) {
-			if (hm.get(o).equals(value)) {
-				return o;
-			}
-			ob = o;
-		}
-		return ob;
-	}
-	private static int getInt(Object obj) {
+	public static int getInt(Object obj) {
 		if (obj instanceof String) {
 			return Integer.parseInt((String) obj);
 		} else if(obj instanceof Integer){
@@ -84,6 +15,60 @@ public class Game {
 			return 0; // or else whatever you want
 		}
 	}
+	// hm is the map you are trying to get key from it
+	public static int getKey(Map hm, String value) {
+		int ob = 0;
+		for (Object o : hm.keySet()) {
+			if (hm.get(o).equals(value)) {
+				ob = getInt(o);
+			}
+		}
+		return ob;
+	}
+	public String winner(String[] deckSteve, String[] deckJosh) {
+		// make a dictionary using a HashMap
+		HashMap<Integer, String> myPair = new HashMap<Integer, String>();
+		//Adding elements to HashMap
+		myPair.put(2, "2");
+		myPair.put(3, "3");
+		myPair.put(4, "4");
+		myPair.put(5, "5");
+		myPair.put(6, "6");
+		myPair.put(7, "7");
+		myPair.put(8, "8");
+		myPair.put(9, "9");
+		myPair.put(10, "T");
+		myPair.put(11, "J");
+		myPair.put(12, "Q");
+		myPair.put(13, "K");
+		myPair.put(14, "A");
+
+		//iterate through both decks
+		int pointsSteve = 0;
+		int pointsJosh = 0;
+		for (int i = 0; i < deckSteve.length; i++){
+			String c1 = deckSteve[i];
+			String c2 = deckJosh[i];
+			//use regex to check if the string contains numbers only
+			if ((c1.matches("^[0-9]+$")) && (c2.matches("^[0-9]+$"))){
+				if (getInt(deckSteve[i]) > getInt(deckJosh[i])){ pointsSteve++; }
+				if (getInt(deckSteve[i]) < getInt(deckJosh[i])){ pointsJosh++; }
+			}
+			//use regex to check if the string contains upper case letters only
+			if ((c1.matches("^[A-Z]+$")) && (c2.matches("^[A-Z]+$"))){
+				if (getKey(myPair, deckSteve[i]) > getKey(myPair, deckJosh[i])){ pointsSteve++; }
+				if (getKey(myPair, deckSteve[i]) < getKey(myPair, deckJosh[i])) { pointsJosh++; }
+			}
+
+
+		}
+		//default winner is "Tie"
+		String winner = "Tie";
+		if (pointsSteve > pointsJosh){ winner = "Steve wins " + pointsSteve +" to "+pointsJosh; }
+		if (pointsSteve < pointsJosh){ winner = "Josh wins " + pointsJosh +" to "+pointsSteve; }
+		return winner;
+	}
+
 	public static void main(String[] args){
 		String[] deckSteve = new String[]{"A", "7", "8"};
 		String[] deckJosh = new String[]{"K", "5", "9"};

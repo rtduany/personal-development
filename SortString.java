@@ -48,6 +48,8 @@ public class SortString{
 		}
 		return d;
 	}
-
-
+	public static void main(String[] args){
+		String str1 = "is2 Thi1s T4est 3a";
+		System.out.println(sortString(str1));
+	}
 }

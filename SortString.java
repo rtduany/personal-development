@@ -35,4 +35,19 @@ public class SortString{
 		return builder.toString();
 	}
 
+	//define a helper method to extract digits from incoming string words
+	public static int digits(String s) {
+		int d = 0;
+		String digit = "";
+		for (int j = 0; j < s.length(); j++) {
+			char chrs = s.charAt(j);
+			if (Character.isDigit(chrs)) {
+				digit += chrs;
+				d = Integer.parseInt(digit);
+			}
+		}
+		return d;
+	}
+
+
 }

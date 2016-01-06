@@ -6,5 +6,33 @@ For an input: "is2 Thi1s T4est 3a" the function should return "Thi1s is2 3a T4es
 import java.util.Arrays;
 import java.util.ArrayList;
 public class SortString{
+	public static String sortString(String st){
+		String[] str = st.split("\\s+");
+		int [] myString = new int[str.length];
+		for(int x = 0; x < str.length; x++){
+			//populate myString with the extracted digits from str string split
+			myString[x] = digits(str[x]);
+		}
+		//sort our int array myString
+		Arrays.sort(myString);
+		//for loop and re-arrange our original string array
+		String[] lastArray = new String[myString.length];
+		for (int i = 0; i < myString.length; i++){
+			for (int j = 0; j < str.length; j++){
+				if (myString[i] == digits(str[j])){
+					lastArray[i] = str[j];
+				}
+			}
+		}
+		//change lastArray to string, using StringBuilder, and return it
+		StringBuilder builder = new StringBuilder();
+		for (String s : lastArray){
+			if (builder.length() > 0){
+				builder.append(" ");
+			}
+			builder.append(s);
+		}
+		return builder.toString();
+	}
 
 }

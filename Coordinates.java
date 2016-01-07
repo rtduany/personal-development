@@ -29,5 +29,12 @@ public class Coordinates extends Point2D.Double{
 	public double getY(){
 		return y;
 	}
+	//define a Point2D toString method
+	public String toString(){
+		StringBuilder builder = new StringBuilder();
+        builder.append('(').append(point2D.getX()).append(", ").append(point2D.getY()).append(')');
+        return builder.toString();
+	}
+
 
 }

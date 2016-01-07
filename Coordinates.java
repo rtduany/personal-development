@@ -35,6 +35,19 @@ public class Coordinates extends Point2D.Double{
         builder.append('(').append(point2D.getX()).append(", ").append(point2D.getY()).append(')');
         return builder.toString();
 	}
+	//define a coordinates method that takes in 2 parameters
+	public Point2D coordinates(double degrees, double radius) {
+		//degrees = Double.parseDouble(args[0]);
+		double radians = Math.toRadians(degrees);
+		//calculate x and y cartesian coordinates
+		x = radius * Math.cos(radians);
+		y = radius * Math.sin(radians);
+		//round to 10 decimal places
+		x = (double) Math.round(x * 10000000000d) / 10000000000d;
+		y = (double) Math.round(y * 10000000000d) / 10000000000d;
+		//return the calculated coordinates
+		return new Coordinates(x, y);
+	}
 
 
 }

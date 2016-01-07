@@ -24,5 +24,19 @@ public class GameTwo{
 		if (pointsSteve < pointsJosh){ winner = "Josh wins " + pointsJosh +" to "+pointsSteve; }
 		return winner;
 	}
-
+	//define a getIndex helper method to return an int index for each element from the 2 decks
+	public int getIndex(String[] rnk, String str){
+		int ind = 0;
+		for (int i = 0; i < rnk.length; i++){
+			if (rnk[i] == str){ ind = i; }
+		}
+		return ind;
+	}
+	//define main method
+	public static void main(String[] args){
+		String[] deckSteve = new String[]{"A","7","8", "5", "T", "Q"};
+		String[] deckJosh = new String[]{"K","5","9", "7", "J", "6"};
+		Game game = new Game();
+		System.out.println(game.winner(deckSteve, deckJosh));
+	}
 }

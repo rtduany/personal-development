@@ -11,5 +11,16 @@ import java.lang.Math.*;
 import java.lang.StringBuilder;
 
 public class Coordinates extends Point2D.Double{
+	private double x;
+	private double y;
+	private final Point2D.Double point2D;
+	//define a no-argument constructor
+	public Coordinates(){
+		this.point2D = new Point2D.Double(x, y);
+	}
+	public Coordinates(double x, double y){
+		super(x, y);
+		this.point2D = new Point2D.Double(x, y);
+	}
 
 }

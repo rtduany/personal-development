@@ -5,6 +5,11 @@ coordinates(90,1)
 coordinates(45, 1)
 => (0.7071067812, 0.7071067812)
 */
-public class Coordinates{
+import java.awt.geom.Point2D;
+import java.awt.geom.Point2D.Double;
+import java.lang.Math.*;
+import java.lang.StringBuilder;
+
+public class Coordinates extends Point2D.Double{
 
 }

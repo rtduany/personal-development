@@ -48,6 +48,13 @@ public class Coordinates extends Point2D.Double{
 		//return the calculated coordinates
 		return new Coordinates(x, y);
 	}
-
-
+	//define main method
+	public static void main(String[] args){
+		//create a Coordinates object
+		Coordinates coord = new Coordinates(45, 1);
+		System.out.println(coord.coordinates(45, 1));
+		//instantiate a second object
+		Coordinates coord2 = new Coordinates();
+		System.out.println(coord2.coordinates(90, 1));
+	}
 }

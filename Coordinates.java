@@ -22,5 +22,12 @@ public class Coordinates extends Point2D.Double{
 		super(x, y);
 		this.point2D = new Point2D.Double(x, y);
 	}
+	//define 2 Point2D getter methods
+	public double getX(){
+		return x;
+	}
+	public double getY(){
+		return y;
+	}
 
 }

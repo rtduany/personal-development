@@ -16,5 +16,13 @@ public class GameTwo{
 		}
 		return getWinner(pointsSteve, pointsJosh);
 	}
+	//define a getWinner helper method to return the winner based on points
+	public String getWinner(int ptsS, int ptsJ){
+		//default winner is "Tie"
+		String winner = "Tie";
+		if (pointsSteve > pointsJosh){ winner = "Steve wins " + pointsSteve +" to "+pointsJosh; }
+		if (pointsSteve < pointsJosh){ winner = "Josh wins " + pointsJosh +" to "+pointsSteve; }
+		return winner;
+	}
 
 }

@@ -18,5 +18,9 @@ public class CalculateRotation {
 		} else { rotations = -1; }
 		return rotations;
 	}
+	//define a isRotation helper method to check if first string is a valid rotation of the second string
+	static boolean isRotation(String s1,String s2) {
+		return (s1.length() == s2.length()) && ((s1+s1).indexOf(s2) != -1);
+	}
 
 }

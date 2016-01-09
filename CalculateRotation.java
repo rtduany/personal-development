@@ -3,5 +3,20 @@ For instance, take the strings "fatigue" and "tiguefa". In this case, the first 
 If the second string isn't a valid rotation of the first string, the method returns -1.
 */
 public class CalculateRotation {
+	static int shiftedDiff(String first, String second){
+		//default value is 0 where the first and second string are the same
+		int rotations = 0;
+		int j = 0;
+		//check if they are same length with valid rotation
+		if (isRotation(first, second)){
+			for (int i = 0; i < second.length(); i++){
+				if (second.charAt(i) == first.charAt(0)){
+					rotations = i;
+					break;
+				}
+			}
+		} else { rotations = -1; }
+		return rotations;
+	}
 
 }

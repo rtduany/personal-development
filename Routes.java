@@ -30,5 +30,8 @@ public class Routes {
 		nWays = ways.longValue();
 		return nWays;
 	}
-
+	//define main method
+	public static void main(String[] args){
+		System.out.println("The number of routes for a grid n by n is: " + routes(20));
+	}
 }

@@ -29,5 +29,19 @@ public class Rotator{
 		if (n < 0){ result = negativeOrder(length, n); }
 		return result;
 	}
+	//define a negativeOrder() helper method
+	private int[] negativeOrder(int higherIndex, int order2){
+		int k = higherIndex - 1;
+		//if n is negative and its absolute value is greater than length, use mod and assign remainder to n
+		int bigNegative = Math.abs(order2);
+		if (bigNegative > length){ order2 = order2 % length; }
+		for (int i = 0; i <= k + order2; i++){ result[i] = array[i - order2]; }
+		int j = 0;
+		for (int i = k; i > k + order2; i--){
+			result[i] = array[j-order2-1];
+			j--;
+		}
+		return result;
+	}
 
 }

@@ -51,5 +51,9 @@ public class Rotator{
 		for (int i = order; i < k; i++){ result[i] = array[j++]; }
 		return result;
 	}
-
+	public static void main(String[] args){
+		int[] myArray = new int[]{1, 2, 3, 4, 5};
+		Rotator r = new Rotator();
+		System.out.println(Arrays.toString(r.rotate(myArray, -7)));
+	}
 }

@@ -43,5 +43,13 @@ public class Rotator{
 		}
 		return result;
 	}
+	//define a doRotate() helper method
+	private int[] doRotate(int higherIndex, int order){
+		int k = higherIndex;
+		for (int i = 0; i < order; i++){ result[i] = array[k - order + i]; }
+		int j = 0;
+		for (int i = order; i < k; i++){ result[i] = array[j++]; }
+		return result;
+	}
 
 }

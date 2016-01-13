@@ -11,5 +11,23 @@ rotate(data, 5)    =>    {1, 2, 3, 4, 5}
 import java.util.Arrays;
 import java.lang.Math.*;
 public class Rotator{
+	//declare some fields
+	private int[] array;
+	private int[] result;
+	private int length;
+	public int[] rotate(int[] data, int n){
+		this.array = data;
+		this.length = data.length;
+		this.result = new int[length];
+		//if n is greater than length, use mod and assign remainder to n
+		if (n > length){ n = n % length; }
+		//if n equals 0, return the array as is
+		if (n == 0){ for (int i = 0; i < length; i++){ result[i] = array[i]; } }
+		//if n is greater than 0, use doRotate() helper method to rotate the array
+		if (n > 0){ result = doRotate(length, n); }
+		//if n is negative, use negativeOrder() helper method to rotate the array
+		if (n < 0){ result = negativeOrder(length, n); }
+		return result;
+	}
 
 }

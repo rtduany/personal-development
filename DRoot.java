@@ -5,5 +5,26 @@ digital_root(16)
 */
 import java.util.ArrayList;
 public class DRoot{
+	//define a digital_root() method that takes in 1 parameter
+	public static int digital_root(int n){
+		int sum = 0;
+		if (n > 0){
+			//create an arra list
+			ArrayList<Integer> arraylist = new ArrayList<Integer>();
+			//populate the array with the digits of int n
+			do{ arraylist.add(n % 10); n /= 10;
+			}while (n > 0);
+			//get the sum of digits in the array using foreach loop
+			for(int i : arraylist){
+				sum += i;
+			}
+		}
+		//get the length of the array
+		int length = String.valueOf(sum).length();
+		//check if the length of the sum is more 1 digit
+		if (length > 1){ return digital_root(sum); }
+
+		return sum;
+	}
 
 }

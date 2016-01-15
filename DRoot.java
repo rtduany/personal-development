@@ -26,5 +26,7 @@ public class DRoot{
 
 		return sum;
 	}
-
+	public static void main(String[] args){
+		System.out.println(digital_root(493193));
+	}
 }

@@ -45,5 +45,14 @@ public class DivisibleInts{
 	  }
 	  return count;
   }
+	//define myNumber() helper method that takes 1 parameter
+	public static int myNumber(int[] nums){
+		StringBuilder strNum = new StringBuilder();
+		for (int num : nums){
+			strNum.append(num);
+		}
+		int finalInt = Integer.parseInt(strNum.toString());
+		return finalInt;
+	}
 
 }

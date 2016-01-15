@@ -54,5 +54,8 @@ public class DivisibleInts{
 		int finalInt = Integer.parseInt(strNum.toString());
 		return finalInt;
 	}
-
+	//define main method
+	public static void main(String[] args){
+		System.out.println(getCount(877692));
+	}
 }

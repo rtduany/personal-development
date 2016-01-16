@@ -27,5 +27,31 @@ public class MergeSort{
 			mergeParts(lowerIndex, middle, higherIndex);
 		}
 	}
+	//define a mergeParts() helper method
+	private void mergeParts(int lowerIndex, int middle, int higherIndex){
+		//populate the empty tempMergeSortArr
+		for (int i = lowerIndex; i <= higherIndex; i++){
+			tempMergeSortArr[i] = array[i];
+		}
+		int i = lowerIndex;
+		int j = middle + 1;
+		int k = lowerIndex;
+		//if element in left side of array is less than or equal to the one on the right, assign element to array[k]
+		while(i <= middle && j <= higherIndex){
+			if (tempMergeSortArr[i] <= tempMergeSortArr[j]){
+				array[k] = tempMergeSortArr[i];
+				i++;
+			}else{
+				array[k] = tempMergeSortArr[j];
+				j++;
+			}
+			k++;
+		}
+		while(i <= middle){
+			array[k] = tempMergeSortArr[i];
+			i++;
+			k++;
+		}
+	}
 
 }

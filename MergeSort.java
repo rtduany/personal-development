@@ -14,5 +14,18 @@ public class MergeSort{
 		tempMergeSortArr = new int[length];
 		doMergeSort(0, length -1);
 	}
+	//define a doMergeSort() method that takes in 2 incoming parameters (lowerIndex and higherIndex)
+	private void doMergeSort(int lowerIndex, int higherIndex){
+		//if lowerIndex is less than higherIndex, create a middle int index and do the sorting
+		if (lowerIndex < higherIndex){
+			int middle = lowerIndex + (higherIndex - lowerIndex) / 2;
+			//sort the left side of the array recursively
+			doMergeSort(lowerIndex, middle);
+			//sort the right side of the array recursively
+			doMergeSort(middle + 1, higherIndex);
+			//now merge both parts
+			mergeParts(lowerIndex, middle, higherIndex);
+		}
+	}
 
 }

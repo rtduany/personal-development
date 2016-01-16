@@ -53,5 +53,15 @@ public class MergeSort{
 			k++;
 		}
 	}
-
+	//define the main method
+	public static void main(String[] args){
+		int[] myArray = new int[]{8, 3, 6, 1, 9, 4, 10};
+		MergeSort ms = new MergeSort();
+		ms.sort(myArray);
+		//System.out.println(Arrays.toString(myArray));
+		for (int i : myArray){
+			System.out.print(i);
+			System.out.print(" ");
+		}
+	}
 }

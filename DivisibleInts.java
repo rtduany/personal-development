@@ -15,47 +15,25 @@ A non negative integer.
 Output:
 The number of times you found an integer that was evenly divisible with N.
 */
-import java.util.ArrayList;
-import java.util.Arrays;
 public class DivisibleInts{
-	public static int getCount(int n){
-	  int temp = n;
-	  //default count is 0
-	  int count = 0;
-	  //define an appropriately sized int array or array list
-	  String[] strings = Integer.toString(n).split(", ");
-	  ArrayList<Integer> arraylist = new ArrayList<Integer>();
-	  //n must be a non negative integer
-	  do{ arraylist.add(n % 10); n /= 10; }while(n > 0);
-	  //get single elements using foreach loop and do the processing
-	  for (int i : arraylist){
-		  //do the division and incrementing within a mod if statement
-		  if (temp % i == 0){ count++; }
-	  }
-	  int[] array = new int[strings.length];
-	  int j = 0;
-	  for (String str : strings){
-		  array[j] = Integer.parseInt(str.trim());
-		  j++;
-	  }
-	  for (int i = 0; i < array.length; i++){
-		  int[] subArray = Arrays.copyOfRange(array, i, i+1);
-		  //turn subArray to number or int
-		  if (temp % myNumber(subArray) == 0){ count++; }
-	  }
-	  return count;
-  }
-	//define myNumber() helper method that takes 1 parameter
-	public static int myNumber(int[] nums){
-		StringBuilder strNum = new StringBuilder();
-		for (int num : nums){
-			strNum.append(num);
+	//define a divisible() method that takes in an int n as a parameter
+	public static int getCount(int n) {
+		//convert the incoming number to a string
+		String nStr = Integer.toString(n);
+		int count = 0;
+		//an outer loop that iterates through our string array using a for loop
+		for (int i = 0; i < nStr.length(); i++) {
+			//an inner loop
+			for (int j = i + 1; j < nStr.length() + 1; j++) {
+				//get a subvalue using the substring method and parsing to int. Use the iterators of our 2 loops
+				int val = Integer.parseInt(nStr.substring(i, j));
+				//if the returned subvalue is not 0 and n is divisible by our subvalue, we increment our count
+				if (val != 0 && n % val == 0) count++;
+			}
 		}
-		int finalInt = Integer.parseInt(strNum.toString());
-		return finalInt;
+		return count - 1;
 	}
-	//define main method
 	public static void main(String[] args){
-		System.out.println(getCount(877692));
+		System.out.println(getCount(1111111111));
 	}
 }

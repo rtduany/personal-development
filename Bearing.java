@@ -25,5 +25,18 @@ public class Bearing{
 	static public double finalBrng(double lat1, double long1, double lat2, double long2){
 		return (_bearing(lat2, long2, lat1, long1) + 180.0) % 360;
 	}
+	//define a _bearing helper method that takes in 4 parameters and calculates the bearing (initial or final)
+	static private double _bearing(double lat1, double long1, double lat2, double long2){
+		//degrees to radians converter
+		double degToRad = Math.PI / 180.0;
+		double phi1 = lat1 * degToRad;
+		double phi2 = lat2 * degToRad;
+		double lam1 = long1 * degToRad;
+
+		double lam2 = long2 * degToRad;
+		//return the result of the formula calculations
+		return Math.atan2(Math.sin(lam2-lam1)*Math.cos(phi2),
+						  Math.cos(phi1)*Math.sin(phi2) - Math.sin(phi1)*Math.cos(phi2)*Math.cos(lam2-lam1)) * 180/Math.PI;
+	}
 
 }

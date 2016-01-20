@@ -42,5 +42,8 @@ public class Distance{
 
 		return R*tt;
 	}
-
+	//define the main method
+	public static void main(String[] args){
+		System.out.println("Distance: " + distance(41, .1212, -11, .2323) + " meters");
+	}
 }

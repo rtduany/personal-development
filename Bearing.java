@@ -21,5 +21,9 @@ public class Bearing{
 	static public double initial(double lat1, double long1, double lat2, double long2){
 		return (_bearing(lat1, long1, lat2, long2) + 360.0) % 360;
 	}
+	//define a finalBrng method that takes in 4 parameters and caters for the final bearing
+	static public double finalBrng(double lat1, double long1, double lat2, double long2){
+		return (_bearing(lat2, long2, lat1, long1) + 180.0) % 360;
+	}
 
 }

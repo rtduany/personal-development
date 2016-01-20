@@ -17,5 +17,9 @@ Since atan2 returns values in the range -π ... +π (that is, -180° ... +180°)
 For final bearing, simply take the initial bearing from the end point to the start point and reverse it (using θ = (θ+180) % 360).
 */
 public class Bearing{
+	//define a initial method that takes in 4 parameters and caters for the initial bearing
+	static public double initial(double lat1, double long1, double lat2, double long2){
+		return (_bearing(lat1, long1, lat2, long2) + 360.0) % 360;
+	}
 
 }

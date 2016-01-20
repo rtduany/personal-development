@@ -38,5 +38,8 @@ public class Bearing{
 		return Math.atan2(Math.sin(lam2-lam1)*Math.cos(phi2),
 						  Math.cos(phi1)*Math.sin(phi2) - Math.sin(phi1)*Math.cos(phi2)*Math.cos(lam2-lam1)) * 180/Math.PI;
 	}
-
+	//define the main method
+	public static void main(String[] args){
+		System.out.println("Initial bearing: "+initial(41, .1212, 11, .2323)+"\n"+"Final bearing: "+finalBrng(41, .1212, 11, .2323));
+	}
 }

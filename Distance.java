@@ -39,11 +39,22 @@ public class Distance{
 		double t2 = Math.cos(a1)*Math.sin(a2)*Math.cos(b1)*Math.sin(b2);
 		double t3 = Math.sin(a1)*Math.sin(b1);
 		double tt = Math.acos(t1 + t2 + t3);
-
-		return R*tt;
+		double result = R*tt;
+		//round it up to 2 decimal places
+		double roundOff = Math.round(result * 100.0) / 100.0;
+		return roundOff;
 	}
+	//define a kMeters helper method to return kilometers
+	private static double kMeters(double m){
+		double km = m * 0.001;
+		//round it up to 2 decimal places
+		double roundOff = Math.round(km * 100.0) / 100.0;
+		return roundOff;
+	}
+
 	//define the main method
 	public static void main(String[] args){
-		System.out.println("Distance: " + distance(41, .1212, -11, .2323) + " meters");
+		double meters = distance(41, .1212, -11, .2323);
+		System.out.println("Kilometers: " + kMeters(meters) + "\nMeters: " + meters + "\nYards: " + yards(meters));
 	}
 }

@@ -51,7 +51,13 @@ public class Distance{
 		double roundOff = Math.round(km * 100.0) / 100.0;
 		return roundOff;
 	}
-
+	//define a yards helper method
+	private static double yards(double m){
+		double yd = m * 1.0936;
+		//round it up to 2 decimal places
+		double roundOff = Math.round(yd * 100.0) / 100.0;
+		return roundOff;
+	}
 	//define the main method
 	public static void main(String[] args){
 		double meters = distance(41, .1212, -11, .2323);
